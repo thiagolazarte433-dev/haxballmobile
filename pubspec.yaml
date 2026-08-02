@@ -1,0 +1,86 @@
+name: haxball_ultra_mobile
+description: "Cliente móvil premium para HaxBall con WebView, joystick virtual y avatar personalizado."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # WebView + sesión persistente
+  webview_flutter: ^4.8.0
+  webview_flutter_android: ^3.16.0
+  webview_flutter_wkwebview: ^3.13.0
+
+  # Selección de imagen para avatar
+  image_picker: ^1.1.2
+
+  # Persistencia local (salas favoritas, ajustes)
+  shared_preferences: ^2.2.3
+
+  # Permisos (cámara, galería, notificaciones)
+  permission_handler: ^11.3.1
+
+  # Gestión de estado
+  provider: ^6.1.2
+
+  # Notificaciones push locales (opcionales)
+  flutter_local_notifications: ^17.2.2
+
+  # Mantener pantalla encendida dentro de la sala
+  wakelock_plus: ^1.2.5
+
+  # Utilidades
+  path_provider: ^2.1.4
+  connectivity_plus: ^6.0.5
+  http: ^1.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+  # Generación de icono de la app
+  flutter_launcher_icons: ^0.13.1
+
+  # Generación de splash screen nativo
+  flutter_native_splash: ^2.4.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icon/
+    - assets/splash/
+
+# ---------------------------------------------------------------------------
+# Configuración del icono de la app.
+# Coloca tu icono 1024x1024 en assets/icon/app_icon.png antes de compilar.
+# Ejecutar:  flutter pub run flutter_launcher_icons
+# ---------------------------------------------------------------------------
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#12081F"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
+
+# ---------------------------------------------------------------------------
+# Configuración del splash screen nativo (tema violeta oscuro HaxBall Ultra).
+# Ejecutar:  flutter pub run flutter_native_splash:create
+# ---------------------------------------------------------------------------
+flutter_native_splash:
+  color: "#12081F"
+  image: "assets/splash/splash_logo.png"
+  color_dark: "#12081F"
+  image_dark: "assets/splash/splash_logo.png"
+  android_12:
+    image: "assets/splash/splash_logo.png"
+    color: "#12081F"
+    icon_background_color: "#12081F"
+  android: true
+  ios: true
